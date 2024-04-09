@@ -1,0 +1,22 @@
+{
+    "products": [
+        {
+            "id": "2",
+            "name": "Product 2",
+            "description": "afgaergserh ergdf asde ",
+            "price": "30"
+        },
+        {
+            "id": "1",
+            "name": "Product 1",
+            "description": "afgaergserh ergdf asde ",
+            "price": "20"
+        },
+        {
+            "id": "3",
+            "name": "Product 3",
+            "description": "afgaergserh ergdf asde ",
+            "price": "60"
+        }
+    ]
+}
