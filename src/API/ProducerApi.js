@@ -6,7 +6,7 @@ const URL = 'http://localhost:3001/products';
 export async function addProduct(product) {
     try {
         const response = await axios.post(URL, {
-            body: product
+            ...product
         });
         return response.data;
     } catch (error) {
