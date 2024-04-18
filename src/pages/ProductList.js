@@ -19,27 +19,32 @@ const ProductList = () => {
 
 
     const handleCloseModal = () => setIsModalOpen(false);
+
+
+    const fetchProducts = async () => {
+        setIsLoading(true);
+        setError(null);
+
+        try {
+            const data = await getProducts()
+            setProducts(data);
+        } catch (err) {
+            setError(err.message);
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         const res = await addProduct(productForm);
+
         console.log(res);
         handleCloseModal(); // Close the modal after successful creation
+        fetchProducts()
     };
     useEffect(() => {
-        const fetchProducts = async () => {
-            setIsLoading(true);
-            setError(null);
-
-            try {
-                const data = await getProducts()
-                setProducts(data);
-            } catch (err) {
-                setError(err.message);
-            } finally {
-                setIsLoading(false);
-            }
-        };
 
         fetchProducts();
     }, []);
